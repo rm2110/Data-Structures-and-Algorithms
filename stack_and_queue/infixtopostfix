@@ -1,0 +1,62 @@
+#include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+int precedence();
+string infixToPostfix(string infix_exp);
+
+int main(){
+    string input;
+    cout<<"Enter your expression: ";
+    cin>>input;
+
+    string ans = infixToPostfix(input);
+    cout<<"Your postfix expression: " << ans;
+
+    return 0;
+}
+
+int precedence(char c){
+    if ('*' == c || '/' == c) return 2;
+    if ('+' == c || '-' == c) return 1;
+    return -1;
+}
+
+string infixToPostfix(string infix_exp){
+    stack<char> st;
+    string postfix_exp;
+
+    for(int i = 0;i < infix_exp.length();i++){
+        char cur = infix_exp[i];
+
+        if(isalnum(cur)){
+             postfix_exp += cur;
+        }
+        else if(cur == '('){ 
+            st.push(cur);
+        }
+        else if(cur == ')'){
+            while(st.top() != '('){
+                postfix_exp += st.top();
+                st.pop();
+            }
+            st.pop();
+        }
+
+        else{
+            while (!st.empty() && precedence(cur) <= precedence(st.top())){
+                postfix_exp += st.top();
+                st.pop();
+            }
+            st.push(cur);
+        }
+    }
+
+    while (!st.empty()) {
+        postfix_exp += st.top();
+        st.pop();
+    }
+
+    return postfix_exp;
+}
