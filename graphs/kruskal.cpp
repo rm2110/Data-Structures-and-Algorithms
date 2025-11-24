@@ -115,32 +115,3 @@ int main() {
 
     return 0;
 }
-
-/*
-Steps (in plain English):
-
-1 List all edges in the graph with their weights.
-(Example: 0–1(10), 0–2(6), 2–3(4)...)
-
-2 Sort all edges in increasing order of weight.
-(Start with smallest edge first.)
-
-3 Create a parent array for all vertices.
-Each vertex is its own parent initially (for Union-Find).
-
-4 Start picking edges one by one:
-
-Take the smallest edge.
-
-Check if the two vertices belong to different sets
-(i.e., adding this edge will not form a cycle).
-
-If yes → include it in the MST.
-
-If no → skip it (it would create a loop).
-
-5 Repeat until you have V - 1 edges in your MST.
-(Where V = number of vertices.)
-
-6 Output the MST edges and their total weight.
-*/
