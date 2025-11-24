@@ -136,37 +136,3 @@ int main() {
 
     return 0;
 }
-/*
-1 Start with one vertex — your source (for example, vertex 0).
-
-Distance to itself = 0
-
-Distance to all others = infinity (∞, meaning unknown yet)
-
-2 Mark all vertices as “unvisited.”
-
-You’ll visit each vertex once and finalize its shortest distance.
-
-3 Pick the vertex with the smallest known distance (initially the source).
-
-Let’s call this vertex u.
-
-4 Check all its neighbors (v):
-
-If there is an edge from u to v,
-
-And if the total distance through u is shorter than the current distance to v,
-→ Update the distance to v.
-
-5 Mark u as visited (its shortest distance is now final).
-
-6 Repeat:
-
-From all the unvisited vertices,
-pick the one with the smallest distance again,
-and repeat Step 4.
-
-7 Stop when all vertices are visited.
-
-8 The distance[] array now contains the shortest distance from the source to every other vertex.
-*/
