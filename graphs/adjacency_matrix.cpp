@@ -5,7 +5,7 @@ using namespace std;
 class Graph {
 public:
     int vertices;
-    int **adj;  // adjacency matrix (2D array)
+    int **adj; 
 
     Graph(int v) {
         vertices = v;
@@ -14,7 +14,7 @@ public:
         for (int i = 0; i < vertices; i++) {
             adj[i] = new int[vertices];
             for (int j = 0; j < vertices; j++) {
-                adj[i][j] = 0;  // initialize with no edges
+                adj[i][j] = 0;  
             }
         }
     }
@@ -63,7 +63,6 @@ public:
         }
     }
 
-    // BFS 
     void BFS(int start) {
         if (start < 0 || start >= vertices) {
             cout << "Invalid start vertex!\n";
@@ -95,7 +94,6 @@ public:
         delete[] visited;
     }
 
-    // DFS
     void DFSUtil(int v, int visited[]) {
         visited[v] = 1;
         cout << v << " ";
@@ -204,3 +202,4 @@ int main() {
         }
     }
 }
+
