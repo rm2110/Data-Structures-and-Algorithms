@@ -117,9 +117,9 @@ void addAtPosition(int val, int pos) {
         return;
     }
 
-    Node* curr = head; // we will traverse to that position so we make current node pointer
+    Node* curr = head; 
     int index = 0; 
-    while (curr != NULL && index < pos - 1) { // checks if curr != NULL and we reach one node previous to desired postion
+    while (curr != NULL && index < pos - 1) { 
         curr = curr->next; // go to next node
         index++; // increment index
     }
@@ -213,5 +213,6 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
