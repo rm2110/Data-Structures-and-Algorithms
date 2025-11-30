@@ -112,7 +112,6 @@ public:
         }
     }
 
-    // BFS
     void BFS(int start) {
         if (start < 0 || start >= vertices) {
             cout << "Invalid start vertex!\n";
@@ -148,7 +147,6 @@ public:
         delete[] visited;
     }
 
-    // DFS
     void DFSUtil(int v, int visited[]) {
         visited[v] = 1;
         cout << v << " ";
@@ -269,3 +267,4 @@ int main() {
 
     return 0;
 }
+
