@@ -95,7 +95,7 @@ int main() {
 void addAtBeginning(int val) {
    Node* newnode = new Node(val);
 
-   if(head == NULL){ // empty list so point first node to both head and tail
+   if(head == NULL){ 
         head = tail = newnode;
     } 
 
@@ -109,7 +109,7 @@ void addAtBeginning(int val) {
 void addAtEnd(int val) {
     Node* newnode = new Node(val);
 
-    if(head == NULL){  // empty list so point first node to both head and tail
+    if(head == NULL){  
         head = tail = newnode;
     } 
 
@@ -173,9 +173,9 @@ void deleteFromBeginning() {
 
     Node* temp = head;
 
-    if(temp->next == NULL){ // only one node in list
-        head = tail = NULL; // reset head and tail
-        delete temp; // delete that singlde node
+    if(temp->next == NULL){
+        head = tail = NULL; 
+        delete temp; 
     }
     else {
         head = head->next;
@@ -235,9 +235,9 @@ void deleteFromPosition(int pos) {
         deleteFromEnd();
         return;
     }
-    // we reach the current node we wish to delete
-    curr->prev->next = curr->next; // we store the add of current's next node into current node's prev node (front linkin)
-    curr->next->prev = curr->prev; // we store the add of current's prev into current's next (back linking) 
+
+    curr->prev->next = curr->next; 
+    curr->next->prev = curr->prev;  
     delete curr;
 }
 
@@ -254,4 +254,5 @@ void printList() {
         curr = curr->next;
     }
     cout << "\n";
+
 }
