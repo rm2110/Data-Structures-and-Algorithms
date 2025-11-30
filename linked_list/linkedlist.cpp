@@ -107,12 +107,12 @@ void addAtEnd(int val) {
         return;
     }
 
-    tail->next = newNode; // newnode's address
-    tail = newNode; // newnode is now tail
+    tail->next = newNode; 
+    tail = newNode; 
 }
 
 void addAtPosition(int val, int pos) {
-    if (pos == 0) { // if position is of starting, call addAtBeginning()
+    if (pos == 0) { 
         addAtBeginning(val);
         return;
     }
@@ -213,4 +213,5 @@ void printList() {
     }
     cout << "\n";
 }
+
 
