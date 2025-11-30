@@ -120,15 +120,15 @@ void addAtPosition(int val, int pos) {
     Node* curr = head; 
     int index = 0; 
     while (curr != NULL && index < pos - 1) { 
-        curr = curr->next; // go to next node
-        index++; // increment index
+        curr = curr->next; 
+        index++; 
     }
-    if (curr == NULL) { // The while loops fails, curr reached NULL then this block will run
+    if (curr == NULL) { 
         cout << "Position out of bounds\n";
         return;
     }
-    // we reached the desired postion, one previous to it
-    Node* newNode = new Node(val); // create newnode
+
+    Node* newNode = new Node(val); 
     newNode->next = curr->next; // curr is one node prev to desired pos and pointing to desired node. We make newnode point to the node this curr is pointing to i.e the next node. So 2 nodes are pointing to the next node
     curr->next = newNode; // current node will now point to the newnode. So curr's old linkage with next node is broken and only newnode is now pointing to the next node
 
@@ -213,6 +213,7 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
 
