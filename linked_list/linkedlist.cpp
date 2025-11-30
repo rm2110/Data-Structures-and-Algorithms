@@ -92,18 +92,18 @@ int main() {
 }
 
 void addAtBeginning(int val) {
-    Node* newNode = new Node(val); // make a newnode
-    newNode->next = head; //newnode's address
-    head = newNode; // newnode becomes head
+    Node* newNode = new Node(val); 
+    newNode->next = head; 
+    head = newNode; 
 
-    if (tail == NULL) // If list was empty, runs only for the first added node OR if list becomes empty
-        tail = newNode; // this newnode will become both head and tail
+    if (tail == NULL) 
+        tail = newNode; 
 }
 
 void addAtEnd(int val) {
-    Node* newNode = new Node(val); // make a newnode
-    if (head == NULL) {  // if list was empty, runs only for the first added node OR if list becomes empty
-        head = tail = newNode; // this newnode will become both head and tail
+    Node* newNode = new Node(val); 
+    if (head == NULL) {  
+        head = tail = newNode; 
         return;
     }
 
@@ -213,3 +213,4 @@ void printList() {
     }
     cout << "\n";
 }
+
