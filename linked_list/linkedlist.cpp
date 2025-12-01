@@ -129,7 +129,7 @@ void addAtPosition(int val, int pos) {
     }
 
     Node* newNode = new Node(val); 
-    newNode->next = curr->next; // curr is one node prev to desired pos and pointing to desired node. We make newnode point to the node this curr is pointing to i.e the next node. So 2 nodes are pointing to the next node
+    newNode->next = curr->next;
     curr->next = newNode; // current node will now point to the newnode. So curr's old linkage with next node is broken and only newnode is now pointing to the next node
 
     if (curr == tail) // If the position was end, we also make the newnode as tail
@@ -213,6 +213,7 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
 
