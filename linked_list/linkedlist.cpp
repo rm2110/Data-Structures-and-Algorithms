@@ -132,7 +132,7 @@ void addAtPosition(int val, int pos) {
     newNode->next = curr->next;
     curr->next = newNode; 
 
-    if (curr == tail) // If the position was end, we also make the newnode as tail
+    if (curr == tail) 
         tail = newNode;
 }
 
@@ -213,6 +213,7 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
 
