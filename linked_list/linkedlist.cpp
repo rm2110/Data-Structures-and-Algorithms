@@ -137,7 +137,7 @@ void addAtPosition(int val, int pos) {
 }
 
 void deleteFromBeginning() {
-    if (head == NULL) { // if list is empty
+    if (head == NULL) { 
         cout << "List is empty\n";
         return;
     }
@@ -213,6 +213,7 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
 
