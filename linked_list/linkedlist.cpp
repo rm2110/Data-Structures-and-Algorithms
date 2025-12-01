@@ -130,7 +130,7 @@ void addAtPosition(int val, int pos) {
 
     Node* newNode = new Node(val); 
     newNode->next = curr->next;
-    curr->next = newNode; // current node will now point to the newnode. So curr's old linkage with next node is broken and only newnode is now pointing to the next node
+    curr->next = newNode; 
 
     if (curr == tail) // If the position was end, we also make the newnode as tail
         tail = newNode;
@@ -213,6 +213,7 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
 
