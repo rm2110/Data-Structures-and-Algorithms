@@ -141,7 +141,7 @@ void deleteFromBeginning() {
         cout << "List is empty\n";
         return;
     }
-    // while deleting, we always make a temporary node, BUT IT'S ONLY A POINTER
+    
     Node* temp = head; // temporary node pointer, pointing to head- this head will be deleted
     head = head->next; // we increment the head by one, so the next node is now head
     delete temp; // delete this old head
@@ -198,7 +198,7 @@ void deleteFromPosition(int pos) {
     if (delNode == tail) // if delNode turns out to be tail, the current node becomes tail
         tail = curr;
 
-    delete delNode; // delete desired node i.e delNode
+    delete delNode; 
 }
 
 void printList() {
@@ -213,6 +213,7 @@ void printList() {
     }
     cout << "\n";
 }
+
 
 
 
