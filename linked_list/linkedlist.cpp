@@ -142,49 +142,48 @@ void deleteFromBeginning() {
         return;
     }
     
-    Node* temp = head; // temporary node pointer, pointing to head- this head will be deleted
-    head = head->next; // we increment the head by one, so the next node is now head
-    delete temp; // delete this old head
+    Node* temp = head; 
+    head = head->next; 
+    delete temp; 
 
-    if (head == NULL) // If list becomes empty after deleting
+    if (head == NULL) 
         tail = NULL;
 }
 
 void deleteFromEnd() {
-    if (head == NULL) { // if list is empty
+    if (head == NULL) { 
         cout << "List is empty\n";
         return;
     }
 
-    if (head->next == NULL) { // if there's only one node
-        delete head; // delete that one node, i.e head in this case
-        head = tail = NULL; // reset head and tail pointers to NULL
+    if (head->next == NULL) {
+        delete head; 
+        head = tail = NULL; 
         return;
     }
 
-    // while traversing, we always make a current node, BUT ITS ONLY A POINTER
-    Node* curr = head; // current node pointer, pointing to head- we will start traversing from head. 
-    while (curr->next != tail) { // traverse till one node previous to tail.
-        curr = curr->next; // current node keeps on moving forward
+    Node* curr = head; 
+    while (curr->next != tail) { 
+        curr = curr->next;
     }
-    delete tail; // current node is pointing to one node previous to tail. This current node is our new tail so we delete old tail
-    curr->next = NULL; // current node's next address will be NULL
-    tail = curr; // our new tail is current node (we rename curr to tail)
+    delete tail; 
+    curr->next = NULL; 
+    tail = curr; 
 }
 
 void deleteFromPosition(int pos) {
-    if (head == NULL) { // If list is empty
+    if (head == NULL) { 
         cout << "List is empty\n";
         return;
     }
-    if (pos == 0) { // If position is 0 we call deleteFromBeginning()
+    if (pos == 0) { 
         deleteFromBeginning();
         return;
     }
     
-    Node* curr = head; // we will traverse to that position so we make current node pointer
+    Node* curr = head;
     int index = 0;
-    while (curr->next && index < pos - 1) { // We're going to delete curr->next, So we must ensure that curr->next actually exists— we can't delete something that's not there!
+    while (curr->next && index < pos - 1) {
         curr = curr->next;
         index++;
     }
@@ -192,10 +191,10 @@ void deleteFromPosition(int pos) {
         cout << "Position out of bounds\n";
         return;
     }
-    Node* delNode = curr->next; // delNode pointer created. curr->next is basically the node we wish to delete i.e delNode
-    curr->next = delNode->next; // we change curr's address to the address of delNode's next. this way, delNode's prev node (curr) now skips delNode and points to next node of delNode
+    Node* delNode = curr->next;
+    curr->next = delNode->next; 
 
-    if (delNode == tail) // if delNode turns out to be tail, the current node becomes tail
+    if (delNode == tail) 
         tail = curr;
 
     delete delNode; 
@@ -213,12 +212,3 @@ void printList() {
     }
     cout << "\n";
 }
-
-
-
-
-
-
-
-
-
